@@ -1664,7 +1664,7 @@ body::before {
 }
 .highlight figcaption span:first-child::before {
   margin: 0 0.6rem 0 0;
-  color: #5e687b;
+  color: #959595;
 }
 .highlight.markdown figcaption span:first-child::before {
   content: 'markdown';
@@ -1803,8 +1803,8 @@ body::before {
   border-radius: 0.25rem;
   width: 100%;
   line-height: 1.7;
-  color: #abb2bf;
-  background-color: #282c34;
+  color: #f8f8f8;
+  background-color: #304148;
 }
 .highlight pre,
 .highlight code {
@@ -1819,8 +1819,8 @@ body::before {
 .highlight figcaption {
   position: relative;
   width: 100%;
-  color: #abb2bf;
-  background-color: #282c34;
+  color: #f8f8f8;
+  background-color: #304148;
   zoom: 1;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -1836,7 +1836,7 @@ body::before {
 .highlight figcaption span:first-child {
   float: left;
   margin-left: 0.5rem;
-  color: #abb2bf;
+  color: #f8f8f8;
 }
 .highlight figcaption span.external-link {
   float: right;
@@ -1854,7 +1854,7 @@ body::before {
 .highlight figcaption.custom .custom-lang {
   float: left;
   margin: 0 0.6rem;
-  color: #5e687b;
+  color: #959595;
 }
 .highlight figcaption.custom .custom-carbon {
   display: -webkit-box;
@@ -1889,30 +1889,30 @@ body::before {
   background-color: #27c93f;
 }
 .highlight figcaption:not(.custom) {
-  background-color: #282c34;
+  background-color: #304148;
 }
 .highlight figcaption:not(.custom) + .table-container td.gutter,
 .highlight figcaption:not(.custom) + table td.gutter {
   display: table-cell;
 }
 .highlight td.gutter {
-  border-right: 1px solid #3a404c;
+  border-right: 1px solid #40565f;
   padding: 0.4rem 0.6rem;
   width: 2rem;
-  background-color: #282c34;
+  background-color: #304148;
   display: none;
 }
 .highlight td.gutter pre {
   text-align: right;
   white-space: nowrap;
-  color: #5e687b;
+  color: #959595;
   background-color: inherit;
 }
 .highlight td.code {
   padding: 0.5rem 0.75rem;
 }
 .highlight .marked {
-  background-color: #333842;
+  background-color: #394e56;
 }
 .highlight .emphasis {
   font-style: italic;
@@ -1921,11 +1921,11 @@ body::before {
   font-weight: bold;
 }
 .highlight .comment {
-  color: #5c6370;
+  color: #65737e;
 }
 .highlight .quote,
 .highlight .params {
-  color: #abb2bf;
+  color: #f8f8f8;
 }
 .highlight .selector-tag,
 .highlight .template-variable,
@@ -1934,7 +1934,7 @@ body::before {
 .highlight .regexp,
 .highlight .name,
 .highlight .tag {
-  color: #f45a5a;
+  color: #eb606b;
 }
 .highlight .builtin-name,
 .highlight .literal,
@@ -1942,12 +1942,12 @@ body::before {
 .highlight .type,
 .highlight .meta,
 .highlight .link {
-  color: #de812c;
+  color: #f99157;
 }
 .highlight .class .keyword:first-child + .title,
 .highlight .built_in,
 .highlight .attribute {
-  color: #eedc6e;
+  color: #fac863;
 }
 .highlight .class .keyword ~ .title,
 .highlight .string .template-variable,
@@ -1956,17 +1956,17 @@ body::before {
 .highlight .class,
 .highlight .subst,
 .highlight .regexp {
-  color: #56b6c2;
+  color: #5fb3b3;
 }
 .highlight .string,
 .highlight .symbol,
 .highlight .bullet,
 .highlight .addition {
-  color: #98c379;
+  color: #99c794;
 }
 .highlight .title,
 .highlight .section {
-  color: #4a98d8;
+  color: #69c;
 }
 .highlight .meta-keyword,
 .highlight .doctag,
@@ -1977,11 +1977,11 @@ body::before {
 .highlight .function,
 .highlight .tag .attr,
 .highlight .keyword {
-  color: #be74d5;
+  color: #c594c5;
 }
 .bash .meta,
 .rust .meta {
-  color: #5c6370;
+  color: #65737e;
 }
 .c\+\+ .built_in,
 .cpp .built_in,
@@ -1992,21 +1992,21 @@ body::before {
 .scss .variable,
 .styl .variable,
 .stylus .variable {
-  color: #abb2bf;
+  color: #f8f8f8;
 }
 .html .meta,
 .xml .meta,
 .yaml .attr,
 .yml .attr {
-  color: #f45a5a;
+  color: #eb606b;
 }
 .js .params,
 .javascript .params {
-  color: #de812c;
+  color: #f99157;
 }
 .json .attr,
 .swift .type {
-  color: #eedc6e;
+  color: #fac863;
 }
 .variable .variable,
 .bash .variable,
@@ -2015,13 +2015,13 @@ body::before {
 .c\# .meta,
 .css .number,
 .diff .meta {
-  color: #56b6c2;
+  color: #5fb3b3;
 }
 .md .section,
 .markdown .section,
 .py .string .meta,
 .python .string .meta {
-  color: #98c379;
+  color: #99c794;
 }
 .bash .built_in,
 .css .built_in,
@@ -2031,20 +2031,20 @@ body::before {
 .shell .meta,
 .shell .keyword,
 .shell .built_in {
-  color: #4a98d8;
+  color: #69c;
 }
 .ini .attr,
 .objectivec .meta,
 .yaml .type,
 .yml .type {
-  color: #be74d5;
+  color: #c594c5;
 }
 .diff .addition {
-  color: #292;
+  color: #99c794;
   background-color: transparent;
 }
 .diff .deletion {
-  color: #d44;
+  color: #eb606b;
   background-color: transparent;
 }
 .ending {
@@ -2325,7 +2325,7 @@ body::before {
   cursor: pointer;
 }
 .copy-button i {
-  color: #5e687b;
+  color: #959595;
 }
 .sticky-top {
   position: absolute;
