@@ -923,7 +923,6 @@ body::before {
   z-index: 0;
   width: 100%;
   height: 100%;
-  background: url("/images/3.jpg") no-repeat center/cover;
 }
 .header-banner::before {
   content: '';
@@ -1664,7 +1663,7 @@ body::before {
 }
 .highlight figcaption span:first-child::before {
   margin: 0 0.6rem 0 0;
-  color: #959595;
+  color: #5e687b;
 }
 .highlight.markdown figcaption span:first-child::before {
   content: 'markdown';
@@ -1803,8 +1802,8 @@ body::before {
   border-radius: 0.25rem;
   width: 100%;
   line-height: 1.7;
-  color: #f8f8f8;
-  background-color: #304148;
+  color: #abb2bf;
+  background-color: #282c34;
 }
 .highlight pre,
 .highlight code {
@@ -1819,8 +1818,8 @@ body::before {
 .highlight figcaption {
   position: relative;
   width: 100%;
-  color: #f8f8f8;
-  background-color: #304148;
+  color: #abb2bf;
+  background-color: #282c34;
   zoom: 1;
   border-top-left-radius: 0.25rem;
   border-top-right-radius: 0.25rem;
@@ -1836,7 +1835,7 @@ body::before {
 .highlight figcaption span:first-child {
   float: left;
   margin-left: 0.5rem;
-  color: #f8f8f8;
+  color: #abb2bf;
 }
 .highlight figcaption span.external-link {
   float: right;
@@ -1854,7 +1853,7 @@ body::before {
 .highlight figcaption.custom .custom-lang {
   float: left;
   margin: 0 0.6rem;
-  color: #959595;
+  color: #5e687b;
 }
 .highlight figcaption.custom .custom-carbon {
   display: -webkit-box;
@@ -1889,30 +1888,30 @@ body::before {
   background-color: #27c93f;
 }
 .highlight figcaption:not(.custom) {
-  background-color: #304148;
+  background-color: #282c34;
 }
 .highlight figcaption:not(.custom) + .table-container td.gutter,
 .highlight figcaption:not(.custom) + table td.gutter {
   display: table-cell;
 }
 .highlight td.gutter {
-  border-right: 1px solid #40565f;
+  border-right: 1px solid #3a404c;
   padding: 0.4rem 0.6rem;
   width: 2rem;
-  background-color: #304148;
+  background-color: #282c34;
   display: none;
 }
 .highlight td.gutter pre {
   text-align: right;
   white-space: nowrap;
-  color: #959595;
+  color: #5e687b;
   background-color: inherit;
 }
 .highlight td.code {
   padding: 0.5rem 0.75rem;
 }
 .highlight .marked {
-  background-color: #394e56;
+  background-color: #333842;
 }
 .highlight .emphasis {
   font-style: italic;
@@ -1921,11 +1920,11 @@ body::before {
   font-weight: bold;
 }
 .highlight .comment {
-  color: #65737e;
+  color: #5c6370;
 }
 .highlight .quote,
 .highlight .params {
-  color: #f8f8f8;
+  color: #abb2bf;
 }
 .highlight .selector-tag,
 .highlight .template-variable,
@@ -1934,7 +1933,7 @@ body::before {
 .highlight .regexp,
 .highlight .name,
 .highlight .tag {
-  color: #eb606b;
+  color: #f45a5a;
 }
 .highlight .builtin-name,
 .highlight .literal,
@@ -1942,12 +1941,12 @@ body::before {
 .highlight .type,
 .highlight .meta,
 .highlight .link {
-  color: #f99157;
+  color: #de812c;
 }
 .highlight .class .keyword:first-child + .title,
 .highlight .built_in,
 .highlight .attribute {
-  color: #fac863;
+  color: #eedc6e;
 }
 .highlight .class .keyword ~ .title,
 .highlight .string .template-variable,
@@ -1956,17 +1955,17 @@ body::before {
 .highlight .class,
 .highlight .subst,
 .highlight .regexp {
-  color: #5fb3b3;
+  color: #56b6c2;
 }
 .highlight .string,
 .highlight .symbol,
 .highlight .bullet,
 .highlight .addition {
-  color: #99c794;
+  color: #98c379;
 }
 .highlight .title,
 .highlight .section {
-  color: #69c;
+  color: #4a98d8;
 }
 .highlight .meta-keyword,
 .highlight .doctag,
@@ -1977,11 +1976,11 @@ body::before {
 .highlight .function,
 .highlight .tag .attr,
 .highlight .keyword {
-  color: #c594c5;
+  color: #be74d5;
 }
 .bash .meta,
 .rust .meta {
-  color: #65737e;
+  color: #5c6370;
 }
 .c\+\+ .built_in,
 .cpp .built_in,
@@ -1992,21 +1991,21 @@ body::before {
 .scss .variable,
 .styl .variable,
 .stylus .variable {
-  color: #f8f8f8;
+  color: #abb2bf;
 }
 .html .meta,
 .xml .meta,
 .yaml .attr,
 .yml .attr {
-  color: #eb606b;
+  color: #f45a5a;
 }
 .js .params,
 .javascript .params {
-  color: #f99157;
+  color: #de812c;
 }
 .json .attr,
 .swift .type {
-  color: #fac863;
+  color: #eedc6e;
 }
 .variable .variable,
 .bash .variable,
@@ -2015,13 +2014,13 @@ body::before {
 .c\# .meta,
 .css .number,
 .diff .meta {
-  color: #5fb3b3;
+  color: #56b6c2;
 }
 .md .section,
 .markdown .section,
 .py .string .meta,
 .python .string .meta {
-  color: #99c794;
+  color: #98c379;
 }
 .bash .built_in,
 .css .built_in,
@@ -2031,20 +2030,20 @@ body::before {
 .shell .meta,
 .shell .keyword,
 .shell .built_in {
-  color: #69c;
+  color: #4a98d8;
 }
 .ini .attr,
 .objectivec .meta,
 .yaml .type,
 .yml .type {
-  color: #c594c5;
+  color: #be74d5;
 }
 .diff .addition {
-  color: #99c794;
+  color: #292;
   background-color: transparent;
 }
 .diff .deletion {
-  color: #eb606b;
+  color: #d44;
   background-color: transparent;
 }
 .ending {
@@ -2325,7 +2324,7 @@ body::before {
   cursor: pointer;
 }
 .copy-button i {
-  color: #959595;
+  color: #5e687b;
 }
 .sticky-top {
   position: absolute;

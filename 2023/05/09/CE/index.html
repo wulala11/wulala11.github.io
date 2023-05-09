@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="nss上的CE逆向专题，花了19大洋，心疼，不过物有所值。学习CE的基本操作及用法。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NSS上的逆向题">
+<meta property="og:url" content="https://wulala11.github.io/2023/05/09/CE/index.html">
+<meta property="og:site_name" content="The Sun Also Rises">
+<meta property="og:description" content="nss上的CE逆向专题，花了19大洋，心疼，不过物有所值。学习CE的基本操作及用法。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/1.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/2.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/3.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/4.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/5.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/6.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/7.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/8.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/9.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/11.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/05/09/CE/12.png">
+<meta property="article:published_time" content="2023-05-09T10:39:55.000Z">
+<meta property="article:modified_time" content="2023-05-09T11:07:07.338Z">
+<meta property="article:author" content="wulala">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wulala11.github.io/2023/05/09/CE/1.png"><title>NSS上的逆向题 | The Sun Also Rises</title><link ref="canonical" href="https://wulala11.github.io/2023/05/09/CE/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"dark","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/ctf/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/ctf/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">NSS上的逆向题</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-05-09</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-05-09</span></span></div></header><div class="post-body"><p>第一题跟着官方的wp，成功打通。<br>第二题没有wp了，开始自己摸索。</p>
+
+        <h2 id="Dice-2"   >
+          <a href="#Dice-2" class="heading-link"><i class="fas fa-link"></i></a><a href="#Dice-2" class="headerlink" title="Dice-2"></a>Dice-2</h2>
+      <p>找到这五个数的地址<img src="/2023/05/09/CE/1.png" class=""><br>右键要修改地址，看到《找出是什么改写了该地址》，将得出地址改成<img src="/2023/05/09/CE/2.png" class=""><br>将五个数改为1（大成功指的是1为coc跑团中的说法），点击按键，获得flag<img src="/2023/05/09/CE/3.png" class=""></p>
+
+        <h2 id="四两拨千斤-3"   >
+          <a href="#四两拨千斤-3" class="heading-link"><i class="fas fa-link"></i></a><a href="#四两拨千斤-3" class="headerlink" title="四两拨千斤-3"></a>四两拨千斤-3</h2>
+      <p>CE解法，通过ida知道NPC血量为10000，进而可以得知攻击力，找到攻击力地址，将攻击力直接改为10000，一击秒杀，获得flag。<img src="/2023/05/09/CE/4.png" class=""></p>
+
+        <h2 id="大道磨灭-4"   >
+          <a href="#大道磨灭-4" class="heading-link"><i class="fas fa-link"></i></a><a href="#大道磨灭-4" class="headerlink" title="大道磨灭-4"></a>大道磨灭-4</h2>
+      <p>看了眼ida知道该怎么解了。</p>
+<img src="/2023/05/09/CE/5.png" class="">
+<p>看到if判断，大于299跳转到roundd，并且ida分析得知roundd能跳转到flag相关的函数，所以得出个思路，只要我把血改的足够厚，再手动按299下，就能获取flag。</p>
+<img src="/2023/05/09/CE/6.png" class="">
+<p>改完以后发现自己的血条固定在4了，然后就可以来到最爱的手搓环节啦。</p>
+<img src="/2023/05/09/CE/7.png" class="">
+
+
+        <h2 id="Cheat-pvz-O-o"   >
+          <a href="#Cheat-pvz-O-o" class="heading-link"><i class="fas fa-link"></i></a><a href="#Cheat-pvz-O-o" class="headerlink" title="Cheat pvz-O.o"></a>Cheat pvz-O.o</h2>
+      <p>游戏破解，但是我并没有完全破解，不知道啥时候能用ce弄个修改器</p>
+<p>两种修改思路，改植物冷却，让僵尸全部等到最后给小车创死，或者改当前鼠标所选植物，改成玉米大炮让前面的僵尸见见世面（两种都要先改阳光</p>
+<p>改阳光的方法：第一关为例，初始阳光为150，在ce先搜索150的数值，买完豌豆射手<br>后变成50阳光，再次搜索50阳光的数值，然后直接改就行。<img src="/2023/05/09/CE/8.png" class=""><br>改植物冷却的方法：先要明白一点，植物在冷却和未在冷却时，在计算机里是什么状态的，百度得知，冷却时为0，未冷却时为1。了解后去CE试试，先搜索单字节1的数值，把所要修改的植物种下后，再次搜索单字节0的数值，待冷却完毕再搜索单字节1的数值，重复操作···，能够找出所控制植物冷却的地址。将其数值固定为1，修改完毕。<img src="/2023/05/09/CE/9.png" class=""><br>改鼠标当前所选植物的方法：拖动植物，然后直接暂停游戏，（注意，这时候植物是处于被鼠标拖动的状态），在CE搜索未知的初始值，回到游戏，拖动另外一个植物，搜索有变动的数值，在搜索完变动的数值以后，可以多按几次搜索未发生变动的数值，再回到游戏拖动与上个植物不同的植物，重复操作···，等筛选出的地址条数在100以内时就可以去找哪个是控制鼠标所选植物的地址了。（建议先看一下植物大战僵尸的植物序号），图片黄圈的0是豌豆射手的序号，该值由拖动的第一个植物影响，篮圈的是最后拖动植物的序号。<br>每关的过法：1到4关可以改冷却，卡最后一波小车创死。（不过种土豆的时候别种满，头铁的可以试试o.o ）。第一关只改个阳光也能过，一直往前面种豌豆射手就行，（第二关好像也行，不过比较极限），第一关过了后获得的向日葵里会有一段话，flag在1-x的某个东西里。</p>
+<img src="/2023/05/09/CE/11.png" class="">
+<p>第五关的滚土豆只能改植物，把普通土豆改成爆炸土豆就行，爆炸土豆植物序号49，后面的关卡两种都行，自行选择。打完1-10后获得一张纸条，上面有flag。</p>
+<img src="/2023/05/09/CE/12.png" class="">
+
+<p>也可以pak解包main.pak文件，去文件夹里找这张图片。</p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google">Share to: </div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2023/04/25/kunpenbei/"><span class="paginator-prev__text">鲲鹏杯个人wp</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dice-2"><span class="toc-number">1.</span> <span class="toc-text">
+          Dice-2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E4%B8%A4%E6%8B%A8%E5%8D%83%E6%96%A4-3"><span class="toc-number">2.</span> <span class="toc-text">
+          四两拨千斤-3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E9%81%93%E7%A3%A8%E7%81%AD-4"><span class="toc-number">3.</span> <span class="toc-text">
+          大道磨灭-4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cheat-pvz-O-o"><span class="toc-number">4.</span> <span class="toc-text">
+          Cheat pvz-O.o</span></a></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/1.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">wulala11</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="1802399119" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">13</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/ctf/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/ctf/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
