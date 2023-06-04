@@ -1,19 +1,19 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="距离上次写博客时间挺长的了，趁着这次疫情网课的时间，更新一下进度吧。极客大挑战网址https:&#x2F;&#x2F;game.sycsec.com&#x2F;  首先拿到一个文件（这个网站下东西似乎需要梯子）先把他checksec一下 看到只开了一个nx保护（目前也不清楚有啥作用）直接pass，进入下一步把文件拖入IDA，发现一个可疑的东西b4ckd00r，点进去看一下 发现可以通过跳转到b4ckd00r直接获取shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="萌新解题——极客大挑战pwn1_1">
-<meta property="og:url" content="https://wulala11.github.io/2022/10/31/pwn1-1/index.html">
+<meta property="og:url" content="https://wulala.github.io/2022/10/31/pwn1-1/index.html">
 <meta property="og:site_name" content="The Sun Also Rises">
 <meta property="og:description" content="距离上次写博客时间挺长的了，趁着这次疫情网课的时间，更新一下进度吧。极客大挑战网址https:&#x2F;&#x2F;game.sycsec.com&#x2F;  首先拿到一个文件（这个网站下东西似乎需要梯子）先把他checksec一下 看到只开了一个nx保护（目前也不清楚有啥作用）直接pass，进入下一步把文件拖入IDA，发现一个可疑的东西b4ckd00r，点进去看一下 发现可以通过跳转到b4ckd00r直接获取shell">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn1-1/1.png">
-<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn1-1/3.png">
-<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn1-1/4.png">
-<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn1-1/7.png">
+<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn1-1/1.png">
+<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn1-1/3.png">
+<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn1-1/4.png">
+<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn1-1/7.png">
 <meta property="article:published_time" content="2022-10-31T10:02:54.000Z">
 <meta property="article:modified_time" content="2022-10-31T16:57:35.834Z">
 <meta property="article:author" content="wulala">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wulala11.github.io/2022/10/31/pwn1-1/1.png"><title>萌新解题——极客大挑战pwn1_1 | The Sun Also Rises</title><link ref="canonical" href="https://wulala11.github.io/2022/10/31/pwn1-1/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://wulala.github.io/2022/10/31/pwn1-1/1.png"><title>萌新解题——极客大挑战pwn1_1 | The Sun Also Rises</title><link ref="canonical" href="https://wulala.github.io/2022/10/31/pwn1-1/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
