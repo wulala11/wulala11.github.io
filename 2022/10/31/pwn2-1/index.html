@@ -1,21 +1,21 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="极客大挑战网址https:&#x2F;&#x2F;game.sycsec.com&#x2F;       经过1-1的经验，同样是checksec一下 同样只开了nx保护 拖入IDA，同样发现一个b4ckd00r，点进去 可以看到如果跳转到b4ckd00r的话，会退出运行。因此2-1并不能像1-1一样直接跳转到b4ckd00r里。 不过在流程图和汇编部分中能发现一个path path能进">
 <meta property="og:type" content="article">
 <meta property="og:title" content="萌新解题——极客大挑战pwn2_1">
-<meta property="og:url" content="https://wulala.github.io/2022/10/31/pwn2-1/index.html">
+<meta property="og:url" content="https://wulala11.github.io/2022/10/31/pwn2-1/index.html">
 <meta property="og:site_name" content="The Sun Also Rises">
 <meta property="og:description" content="极客大挑战网址https:&#x2F;&#x2F;game.sycsec.com&#x2F;       经过1-1的经验，同样是checksec一下 同样只开了nx保护 拖入IDA，同样发现一个b4ckd00r，点进去 可以看到如果跳转到b4ckd00r的话，会退出运行。因此2-1并不能像1-1一样直接跳转到b4ckd00r里。 不过在流程图和汇编部分中能发现一个path path能进">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn2-1/1.png">
-<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn2-1/2.png">
-<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn2-1/3.png">
-<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn2-1/4.png">
-<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn2-1/5.png">
-<meta property="og:image" content="https://wulala.github.io/2022/10/31/pwn2-1/6.png">
+<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/1.png">
+<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/2.png">
+<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/3.png">
+<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/4.png">
+<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/5.png">
+<meta property="og:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/6.png">
 <meta property="article:published_time" content="2022-10-31T10:03:12.000Z">
 <meta property="article:modified_time" content="2022-10-31T10:12:45.869Z">
 <meta property="article:author" content="wulala">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wulala.github.io/2022/10/31/pwn2-1/1.png"><title>萌新解题——极客大挑战pwn2_1 | The Sun Also Rises</title><link ref="canonical" href="https://wulala.github.io/2022/10/31/pwn2-1/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+<meta name="twitter:image" content="https://wulala11.github.io/2022/10/31/pwn2-1/1.png"><title>萌新解题——极客大挑战pwn2_1 | The Sun Also Rises</title><link ref="canonical" href="https://wulala11.github.io/2022/10/31/pwn2-1/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
